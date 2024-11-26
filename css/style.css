@@ -1,0 +1,145 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+:root{
+   --dark-cyan: #3c8067;
+   --cream: #f2ebe3;
+   --very-dark-blue: #1c232b;
+   --dark-grayish-blue: #6c7289;
+   --font-montserrat: "Montserrat", sans-serif;
+   --font-fraunces: "Fraunces", serif;
+}
+
+html{
+   font-size: 62.5%;
+}
+
+body{
+   min-height: 100vh;
+   background-color: var(--cream);
+   font-size: 1.6rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.container{
+   display: flex;
+   max-width: 80rem;
+}
+
+.container img{
+   width: 50%;
+   height: 100%;
+   border-radius: 1rem 0 0 1rem;
+}
+
+/* Resolvi na gambiarra */
+@media screen and (min-width: 81rem){
+   .container img{
+      content: url(../images/image-product-desktop.jpg)
+   }
+}
+
+
+.content-product{
+   background-color: white;
+   padding: 4rem;
+   border-radius: 0 1rem 1rem 0;
+   width: 50%
+}
+
+.content-product .perf{
+   font-family: var(--font-montserrat);
+   text-transform: uppercase;
+   letter-spacing: .5rem;
+   font-weight: 500;
+   color: var(--dark-grayish-blue);
+}
+.content-product h1{
+   font-family: var(--font-fraunces);
+   font-size: 4.5rem;
+   line-height: 4.5rem;
+   padding: 2.5rem 0;
+}
+
+.content-product .text-content{
+   color: var(--dark-grayish-blue);
+   font-family: var(--font-montserrat);
+   font-weight: 500;
+   font-size: 2rem;
+   line-height: 3rem;
+   padding-bottom: 4rem;
+}
+
+.content-valor{
+   display: flex;
+   align-items: center;
+   gap: 3rem;
+}
+
+.content-valor p{
+   color: var(--dark-grayish-blue);
+   font-family: var(--font-montserrat);
+   font-weight: 600;  
+   text-decoration: line-through;
+}
+
+.content-valor .valor-dest{
+   font-size: 5rem;
+   font-family: var(--font-fraunces);
+   font-weight: bold;
+   color: var(--dark-cyan);
+   text-decoration: none;
+}
+
+.btn{
+   background-color: var(--dark-cyan);
+   color: white;
+   padding: 2rem 0;
+   display: inline-block;
+   width: 100%;
+   font-size: 1.7rem;
+   text-decoration: none;
+   font-weight: 600;
+   font-family: var(--font-montserrat);
+   margin-top: 4rem;
+   border-radius: 1rem;
+   display: flex;
+   justify-content: center;
+   gap: 2rem;
+
+   position: relative;
+   overflow: hidden;
+}
+
+.btn p{
+   z-index: 1;
+}
+
+.btn::before{
+   content: url(../images/icon-cart.svg);
+   z-index: 1;
+}
+
+.btn::after{
+   content:"";
+   background-color: #275343;
+   width: 0%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 0;
+   border-radius: 0 4rem 4rem 0;
+   transition: .4s ease-in-out width;
+}
+
+.btn:hover::after{
+   width: 105%;
+}
+
+
